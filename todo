@@ -9,8 +9,6 @@ I'll include hte file of the most recently working versions in OLD CODE
 Some various settings:
 
 1. General Settings (Preferences Tab)
-
-
 Auto-Play TTS:
 Toggle Switch: An on/off toggle that determines whether TTS audio should play automatically after text submission.
 Implementation Detail: When turned off, the user will need to press the "Listen" or "Speak" button to hear the audio. When turned on, the Listen and speak buttons are replaced by a single large block that says AutoSpeak activated
@@ -61,7 +59,7 @@ Enable Pop-ups: Checkbox to show small pop-up notifications when profiles change
 Error and Warning Alerts:
 Error Display Settings: Option to choose how errors and warnings are displayed (e.g., visual pop-ups, sounds, or both).
 
-6. Backup and Sync Preferences (Preferences Tab)
+6. Backup and Sync Preferences (Preferences Tab) <USE GITHUB FOR CLOUD>
 Profile Backup and Sync:
 Cloud Sync Toggle: Enable/Disable automatic cloud syncing of profiles and settings. Offers backup at regular intervals (daily, weekly, monthly).
 Local Backup Option: For users who prefer local backups instead of or alongside cloud sync.

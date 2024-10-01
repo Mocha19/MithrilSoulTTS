@@ -1,3 +1,4 @@
+import json
 from PyQt5 import QtWidgets, QtCore
 from tts_widget import TTSWidget
 from preferences_widget import PreferencesWidget
@@ -5,6 +6,7 @@ from preferences_widget import PreferencesWidget
 class TTSApp(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
+        self.load_user_settings() # -NEW-
         self.init_ui()
 
     def init_ui(self):
@@ -52,8 +54,27 @@ class TTSApp(QtWidgets.QWidget):
     def toggle_theme(self, state):
         self.is_dark_mode = state == QtCore.Qt.Checked
         self.apply_styles()
+        self.save_user_settings() # -NEW-
 
     # Adjust font size and maintain current theme
     def change_font_size(self, value):
         self.font_size = value
         self.apply_styles()
+        self.save_user_settings() # -NEW-
+
+    # Load user settings from the JSON file
+    def load_user_settings(self):
+        try:
+            with open('user_data.json','r') as f:
+                data = json.load(f)
+                self.is_dark_mode = data.get('is_dark_mode', True)
+                self.font_size = data.get('font_size', 12)
+        except (FileNotFoundError, json.JSONDecodeError): #if json file doesnt exist, it creates a new file with default preferences
+            self.save_user_settings() 
+
+    # Save user settings to the JSON file
+    def save_user_settings(self):
+        data = {'is_dark_mode': self.is_dark_mode, 'font_size': self.font_size}
+
+        with open('user_data.json','w') as f:
+            json.dump(data, f, indent=4)

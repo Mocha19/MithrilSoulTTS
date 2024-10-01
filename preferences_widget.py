@@ -30,7 +30,7 @@ class PreferencesWidget(QtWidgets.QWidget):
 
         # Theme toggle (Dark Mode/Light Mode)
         self.theme_toggle = QtWidgets.QCheckBox("Dark Mode", self)
-        self.theme_toggle.setChecked(True)  # Default to dark mode
+        self.theme_toggle.setChecked(self.parent_app.is_dark_mode)  # Sets it to saved preference
         self.theme_toggle.stateChanged.connect(lambda state: self.parent_app.toggle_theme(state))
 
         # Font size slider
