@@ -6,7 +6,7 @@ from preferences_widget import PreferencesWidget
 class TTSApp(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
-        self.load_user_settings() # -NEW-
+        self.load_user_settings()
         self.init_ui()
 
     def init_ui(self):
