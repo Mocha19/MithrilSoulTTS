@@ -1,0 +1,12 @@
+{
+    "user_preferences": {
+        "is_dark_mode": false,
+        "font_size": 12
+    },
+    "profiles": {
+        "context_rules": "",
+        "auto_switch": false,
+        "remember_last_profile": false,
+        "auto_correction": false
+    }
+}
