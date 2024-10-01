@@ -3,8 +3,8 @@ from PyQt5 import QtWidgets, QtCore
 class TTSWidget(QtWidgets.QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.init_ui()
         self.volume = 50  # Default volume
+        self.init_ui()
 
     def init_ui(self):
         # Create UI elements for TTS
