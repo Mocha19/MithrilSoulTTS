@@ -1,0 +1,100 @@
+This is currently in a somewhat less than working state. 
+I'ved rebuilt from scratch and am currently on version 1.5
+the main has been stripped down to bare bones, and the settings are now all in seperate files.
+I've accidentally destroyeds the previous working model, but have put more work into this version. 
+
+I'll include hte file of the most recently working versions in OLD CODE
+
+
+Some various settings:
+
+1. General Settings (Preferences Tab)
+
+
+Auto-Play TTS:
+Toggle Switch: An on/off toggle that determines whether TTS audio should play automatically after text submission.
+Implementation Detail: When turned off, the user will need to press the "Listen" or "Speak" button to hear the audio. When turned on, the Listen and speak buttons are replaced by a single large block that says AutoSpeak activated
+Volume Presets:
+Custom Sliders: Two volume sliders for independent control of speakers and mic output. Sliders can save user-defined presets.
+Startup Behavior:
+Launch at Startup Checkbox: Allows the app to start with the system.
+Minimize to System Tray Checkbox: If enabled, closing the app minimizes it to the tray rather than quitting.
+Theme and Appearance:
+Theme Toggle: A toggle for Dark Mode/Light Mode.
+Custom Color Scheme: Dropdown to select from predefined color themes or a color picker for users to create their own.
+Font Size: Slider for adjusting font sizes globally within the app, including text inputs and outputs.
+
+2. Audio Preferences (Preferences Tab)
+Default Voice Selection:
+Voice Selector Dropdown: A dropdown that lists all available voices, such as Nova and other OpenAI voices. Users can set the default voice used across all profiles.
+Playback Devices:
+Device Selector: Dropdowns for both Speakers and Microphone Input, allowing the user to choose their preferred playback and input devices.
+Mic Sensitivity:
+Sensitivity Slider: Slider that adjusts mic sensitivity when audio is routed through a virtual microphone.
+Noise Suppression and Echo Cancellation:
+Toggle Switches: Separate toggles for enabling/disabling noise suppression and echo cancellation. Helps ensure clear audio when using the mic in voice apps like Discord.
+
+3. Profile-Specific Preferences (Profiles Tab)
+Auto-Switch Profile Based on Context:
+Context Rules: A settings area where users can define keywords or conditions that trigger automatic profile switching. For example, if a command is combat-related, the app might switch to a Warrior profile.
+Recent Profile Memory:
+Memory Toggle: Checkbox to enable or disable the feature where the app remembers the last active profile used and reloads it on startup.
+Input Auto-Correction:
+Auto-Correct Toggle: Option to automatically suggest or apply corrections to input before sending it to the language model. This improves the accuracy and style of commands entered.
+
+4. User Experience Preferences (Preferences Tab)
+Multi-Profile Responses:
+Enable/Disable Multi-Profile Switching: Toggle that enables switching between multiple profiles during long dialogues, allowing different profiles to respond based on the type of input.
+Profile-Switching Rules: Define rules for when to switch profiles automatically (similar to Auto-Switch Profile Based on Context).
+Speech Command Integration (Future Feature):
+Voice Command Toggle: Toggle to enable/disable speech commands.
+Command Customization: Settings to define custom commands (e.g., “Next profile”, “Replay last TTS”).
+
+5. Notification Preferences (Preferences Tab)
+Discord Integration Options:
+Audio Notification Toggle: Toggle sound effects for system actions like profile switching, text submission, or TTS completion.
+Volume Control for Notifications: Separate volume slider for adjusting notification sound levels.
+Visual Alerts:
+Flash Screen/Tray Icon: Checkbox to flash the screen or system tray icon when the app requires user attention.
+Pop-up Notifications:
+Enable Pop-ups: Checkbox to show small pop-up notifications when profiles change or when TTS is completed (particularly useful when minimized).
+Error and Warning Alerts:
+Error Display Settings: Option to choose how errors and warnings are displayed (e.g., visual pop-ups, sounds, or both).
+
+6. Backup and Sync Preferences (Preferences Tab)
+Profile Backup and Sync:
+Cloud Sync Toggle: Enable/Disable automatic cloud syncing of profiles and settings. Offers backup at regular intervals (daily, weekly, monthly).
+Local Backup Option: For users who prefer local backups instead of or alongside cloud sync.
+Import/Export Settings:
+Import/Export Button: Buttons to export profiles/settings as files that can be shared with other users or imported into another instance of Charisma Echo.
+
+7. Advanced Preferences (Preferences Tab)
+Developer Mode:
+Enable Developer Mode: A hidden option (like pressing a certain key combo) that unlocks advanced settings such as logging tools, debugging information, and deeper customization of the TTS and profile system.
+Logging and Analytics:
+Toggle Logging: Option to save logs of user inputs and TTS outputs for later review.
+Analytics Reporting: Option to report performance metrics like TTS speed and language model accuracy, useful for improving the app.
+
+8. Profile-Specific Settings (Profiles Tab)
+Voice Speed and Pitch Adjustments:
+Speed and Pitch Sliders: Sliders for adjusting the speed (Slow, Normal, Fast) and pitch (Low, Normal, High) of the TTS voice, allowing users to customize the sound of their characters.
+Voice Effects:
+Voice Effects Menu: Dropdown menu or toggle switches for adding sound effects like echo, reverb, or filters that simulate different environments (e.g., talking in a cave, robotic voice).
+Tie to Profiles: The effects can be tied to specific profiles, making character voices more immersive.
+Character-Based Settings:
+Profile-Linked Voices: Each character profile can have its own unique TTS voice.
+Personality Templates: Option to choose a tone (e.g., formal, casual) and vocabulary set for each profile.
+
+9. Main Screen Buttons (TTS Tab)
+Response Length Control:
+Length Selector Buttons: Buttons or a dropdown that allows users to select how detailed or concise the response should be:
+Short: For brief commands.
+Medium: For moderate complexity.
+Long: For detailed, elaborated responses.
+
+Discord Integration (Future Feature)
+Since you mentioned integrating with Discord, these features could be added:
+Playback Through Discord: Automatically route the TTS audio through the Discord voice channel via a virtual microphone.
+Discord Notification Integration: Show profile changes or status updates as a Discord message or status change.
+Discord Command Input: Allow users to control Charisma Echo directly via Discord commands (e.g., "!tts command").
+
