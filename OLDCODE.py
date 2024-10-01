@@ -196,8 +196,9 @@ class TTSApp(QtWidgets.QWidget):
             translated_text = "Processing text: " + user_input
             self.history_box.append(f"Input: {user_input}\nResponse: {translated_text}")
 
-# Create the application and window
-app = QtWidgets.QApplication(sys.argv)
-window = TTSApp()
-window.show()
-sys.exit(app.exec_())
+    # Create the application and window
+    app = QtWidgets.QApplication(sys.argv)
+    window = TTSApp()
+    window.show()
+    sys.exit(app.exec_())
+
