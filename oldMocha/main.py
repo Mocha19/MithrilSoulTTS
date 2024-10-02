@@ -1,6 +1,6 @@
 import sys
 from PyQt5 import QtWidgets
-from app import TTSApp
+from oldMocha.app import TTSApp
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

@@ -1,8 +1,8 @@
 import json
 from PyQt5 import QtWidgets, QtCore
 
-from tts_widget import TTSWidget
-from preferences_widget import PreferencesWidget
+from oldMocha.tts_widget import TTSWidget
+from oldMocha.preferences_widget import PreferencesWidget
 
 class TTSApp(QtWidgets.QWidget):
     def __init__(self):
