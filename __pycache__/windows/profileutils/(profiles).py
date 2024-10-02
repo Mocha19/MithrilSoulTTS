@@ -1,8 +1,8 @@
 #this is the profiles window
 #here we set up the vaious tabs and visual settings for the profiles window.
 from PyQt5 import QtWidgets
-from profiletabs.narrator import create_narrator_tab
-from profiletabs.profile import create_profile_tab
+from narrator import create_narrator_tab
+from profile import create_profile_tab
 
 def create_profile_window(parent):
     profile_widget = QtWidgets.QWidget()
