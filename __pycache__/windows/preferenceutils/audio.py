@@ -67,7 +67,7 @@ def create_audio_tab(parent):
     parent.narrator_slider.valueChanged.connect(lambda v: parent.narrator_label.setText(f"Narrator: {v}%"))
     parent.narrator_speed_slider.valueChanged.connect(lambda v: parent.narrator_speed_label.setText(f"Narrator Speed: {v}%"))
 
-    connect_signals(parent)
+    connect_audio_signals(parent)
 
     # Layout
     vbox = QtWidgets.QVBoxLayout()
@@ -93,38 +93,35 @@ def save_audio_preferences(parent):
     """Save audio preferences to a JSON file."""
     preferences = {
         'version': '1.0',
-        'settings': {
-            'noise_suppression': parent.noise_checkbox.isChecked(),
-            'echo_cancellation': parent.echo_checkbox.isChecked(),
-            'auto_play_tts': parent.autoplay_checkbox.isChecked(),
-            'instant_audio_stream': parent.instant_checkbox.isChecked(),
-            'mic_volume': parent.mic_slider.value(),
-            'mic_device': parent.mic_dropdown.currentIndex(),
-            'speaker_volume': parent.speaker_slider.value(),
-            'speaker_device': parent.speaker_dropdown.currentIndex(),
-            'narrator': parent.narrator_dropdown.currentIndex(),
-            'narrator_volume': parent.narrator_slider.value(),
-            'narrator_speed': parent.narrator_speed_slider.value()
-        }
+        'noise_suppression': parent.noise_checkbox.isChecked(),
+        'echo_cancellation': parent.echo_checkbox.isChecked(),
+        'auto_play_tts': parent.autoplay_checkbox.isChecked(),
+        'instant_audio_stream': parent.instant_checkbox.isChecked(),
+        'mic_volume': parent.mic_slider.value(),
+        'mic_device': parent.mic_dropdown.currentIndex(),
+        'speaker_volume': parent.speaker_slider.value(),
+        'speaker_device': parent.speaker_dropdown.currentIndex(),
+        'narrator': parent.narrator_dropdown.currentIndex(),
+        'narrator_volume': parent.narrator_slider.value(),
+        'narrator_speed': parent.narrator_speed_slider.value()
     }
-    save_preferences(PREFERENCES_FILE, preferences)
+    save_preferences('preferences.json', preferences)
 
 def load_audio_preferences(parent):
     """Load audio preferences from a JSON file and apply them."""
-    preferences = load_preferences(PREFERENCES_FILE)
+    preferences = load_preferences('preferences.json')
     if preferences:
-        settings = preferences.get('settings', {})
-        parent.noise_checkbox.setChecked(settings.get('noise_suppression', False))
-        parent.echo_checkbox.setChecked(settings.get('echo_cancellation', False))
-        parent.autoplay_checkbox.setChecked(settings.get('auto_play_tts', False))
-        parent.instant_checkbox.setChecked(settings.get('instant_audio_stream', False))
-        parent.mic_slider.setValue(settings.get('mic_volume', 50))
-        parent.mic_dropdown.setCurrentIndex(settings.get('mic_device', 0))
-        parent.speaker_slider.setValue(settings.get('speaker_volume', 50))
-        parent.speaker_dropdown.setCurrentIndex(settings.get('speaker_device', 0))
-        parent.narrator_dropdown.setCurrentIndex(settings.get('narrator', 0))
-        parent.narrator_slider.setValue(settings.get('narrator_volume', 50))
-        parent.narrator_speed_slider.setValue(settings.get('narrator_speed', 50))
+        parent.noise_checkbox.setChecked(preferences.get('noise_suppression', False))
+        parent.echo_checkbox.setChecked(preferences.get('echo_cancellation', False))
+        parent.autoplay_checkbox.setChecked(preferences.get('auto_play_tts', False))
+        parent.instant_checkbox.setChecked(preferences.get('instant_audio_stream', False))
+        parent.mic_slider.setValue(preferences.get('mic_volume', 50))
+        parent.mic_dropdown.setCurrentIndex(preferences.get('mic_device', 0))
+        parent.speaker_slider.setValue(preferences.get('speaker_volume', 50))
+        parent.speaker_dropdown.setCurrentIndex(preferences.get('speaker_device', 0))
+        parent.narrator_dropdown.setCurrentIndex(preferences.get('narrator', 0))
+        parent.narrator_slider.setValue(preferences.get('narrator_volume', 50))
+        parent.narrator_speed_slider.setValue(preferences.get('narrator_speed', 50))
 
         # Update labels
         parent.mic_label.setText(f"Microphone: {parent.mic_slider.value()}%")
