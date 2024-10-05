@@ -5,7 +5,7 @@
 import json
 import os
 from PyQt5 import QtWidgets, QtCore
-from tools.utils import (create_checkbox_layout, create_slider_layout, 
+from utils.utils import (create_checkbox_layout, create_slider_layout, 
                          create_combobox_layout, save_preferences, load_preferences)
 
 PREFERENCES_FILE = 'audio_preferences.json'
